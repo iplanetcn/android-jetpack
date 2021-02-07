@@ -9,7 +9,7 @@ import androidx.room.RoomDatabase
  * @author john
  * @since 2020-07-29
  */
-@Database(entities = arrayOf(Log::class), version = 1, exportSchema = false)
+@Database(entities = [Log::class], version = 1, exportSchema = false)
 abstract class AppDataBase : RoomDatabase() {
     abstract fun logDao() : LogDao
 }

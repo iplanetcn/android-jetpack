@@ -1,2 +1,7 @@
+include ':room'
+include ':score'
+include ':databinding'
+include ':livedata'
+include ':viewmodel'
 include ':hilt'
 rootProject.name = "android-jetpack"

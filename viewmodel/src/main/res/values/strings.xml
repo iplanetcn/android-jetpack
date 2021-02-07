@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">viewmodel</string>
+    <string name="button_text_increase">increase</string>
+    <string name="button_text_decrease">decrease</string>
+</resources>

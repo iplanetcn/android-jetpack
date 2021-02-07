@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">score</string>
+    <string name="label_team_a">Team A</string>
+    <string name="label_team_b">Team B</string>
+    <string name="label_score_default">0</string>
+    <string name="button_text_score_add_1">+1</string>
+    <string name="button_text_score_add_2">+2</string>
+    <string name="button_text_score_add_3">+3</string>
+</resources>
