@@ -1,27 +1,28 @@
 package com.cherry.viewmodel
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
-import kotlinx.android.synthetic.main.activity_main.*
+import androidx.appcompat.app.AppCompatActivity
+import com.cherry.viewmodel.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
-
+    private lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        val mainViewModel : MainViewModel by viewModels()
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        val mainViewModel: MainViewModel by viewModels()
 
-        tv_message.text = mainViewModel.number.toString()
+        binding.tvMessage.text = mainViewModel.number.toString()
 
-        btn_increase.setOnClickListener {
+        binding.btnIncrease.setOnClickListener {
             mainViewModel.number++
-            tv_message.text = mainViewModel.number.toString()
+            binding.tvMessage.text = mainViewModel.number.toString()
         }
 
-        btn_decrease.setOnClickListener {
+        binding.btnDecrease.setOnClickListener {
             mainViewModel.number--
-            tv_message.text = mainViewModel.number.toString()
+            binding.tvMessage.text = mainViewModel.number.toString()
         }
     }
 }
