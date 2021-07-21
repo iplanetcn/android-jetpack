@@ -3,23 +3,24 @@ package com.cherry.livedata
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import kotlinx.android.synthetic.main.activity_main.*
+import com.cherry.livedata.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
-
+    lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
         val viewModelWithLiveData: ViewModelWithLiveData by viewModels()
         viewModelWithLiveData.likedNumber.observe(this, {
-            tv_message.text = it.toString()
+            binding.tvMessage.text = it.toString()
         })
 
-        ibtn_thumb_up.setOnClickListener{
+        binding.ibtnThumbUp.setOnClickListener {
             viewModelWithLiveData.addLikeNumber(1)
         }
 
-        ibtn_thumb_down.setOnClickListener {
+        binding.ibtnThumbDown.setOnClickListener {
             viewModelWithLiveData.addLikeNumber(-1)
         }
     }
